@@ -101,6 +101,13 @@
  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script src="{% static 'js/chartSetup.js' %}"></script>
+<script>
+document.addEventListener("mousemove", function(e) {
+  const x = e.clientX / window.innerWidth * 25; // adjust movement scaling
+  const y = e.clientY / window.innerHeight * 25;
+  document.body.style.backgroundPosition = `${x}px ${y}px`;
+});
+</script>
 
 
 </body>
