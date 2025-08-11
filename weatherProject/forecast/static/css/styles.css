@@ -26,6 +26,7 @@ main {
     background-size: cover;
     background-position: center;
     border-radius: 25px;
+    border:1px solid white;
     overflow: hidden;
     display: flex;
 }
