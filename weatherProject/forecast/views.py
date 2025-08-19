@@ -187,9 +187,9 @@ def get_weather_context(city):
     }
     return context, None
 
-# ======================
+# =======================
 # Django View
-# ======================
+# =======================
 
 def weather_view(request):
     city = request.POST.get('city') if request.method == 'POST' else 'Allahabad'
