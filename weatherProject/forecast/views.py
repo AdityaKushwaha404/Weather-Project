@@ -195,5 +195,9 @@ def weather_view(request):
     city = request.POST.get('city') if request.method == 'POST' else 'Allahabad'
     context, error = get_weather_context(city)
     if error:
-        return HttpResponse(error, status=400 if "Invalid" in error else 500)
+        # Pass error message to template for display
+        context = {'error_message': 'Enter a valid city name.'}
+        # Preserve entered city in input field
+        if request.method == 'POST':
+            context['city'] = city
     return render(request, 'forecast/weather.html', context)
